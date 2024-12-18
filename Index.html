@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGPA CALCULATOR</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <section class="details">
+      <div class="details">
+        <h1>CGPA Calculator</h1>
+        <form id="user-details-form">
+          <label for="name">Name:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          /><br /><br />
+
+          <label for="school">School:</label><br />
+          <input
+            type="text"
+            id="school"
+            name="school"
+            placeholder="Enter your school"
+            required
+          /><br /><br />
+
+          <label for="age">Age:</label><br />
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="Enter your age"
+            min="1"
+            required
+          /><br /><br />
+
+          <label for="level">Level:</label><br />
+          <input
+            type="number"
+            id="level"
+            name="level"
+            placeholder="Enter your level (e.g., 100)"
+            required
+          /><br /><br />
+          <p class="hidden">Invalid level!!</p>
+
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+    <section>
+      <h2>Select Grading System</h2>
+      <form id="grading-system-form">
+        <label>
+          <input
+            type="checkbox"
+            id="default-grading"
+            name="grading-system"
+            value="default"
+          />
+          Default Grading System </label
+        ><br />
+        <label>
+          <input
+            type="checkbox"
+            id="custom-grading"
+            name="grading-system"
+            value="custom"
+          />
+          Customize Grading System </label
+        ><br />
+      </form>
+      <section id="custom-grading-template">
+        <h2>Customize Grading System</h2>
+        <div id="grades-container">
+          <div class="grade-entry">
+            <label for="grade">Grade:</label>
+            <input
+              type="text"
+              class="grade-input"
+              placeholder="Enter Grade e.g A"
+            />
+            <label for="min">Min Score:</label>
+            <input type="number" class="min-score" placeholder="Min Score" />
+            <label for="max">Max Score:</label>
+            <input type="number" class="max-score" placeholder="Max Score" />
+            <label for="grade-gp">Grade GP</label>
+            <input
+              type="number"
+              class="grade-gp"
+              placeholder="Grade GP e.g 5"
+            />
+          </div>
+
+          <!-- Additional grade entries can be added here -->
+        </div>
+        <button id="add-grade">Add Another Grade</button>
+      </section>
+    </section>
+  </body>
+</html>
