@@ -79,7 +79,28 @@ document.getElementById("add-grade-btn").addEventListener("click", function () {
   document.getElementById("grades-container").appendChild(newGradeEntry);
 });
 
+// the save button functionality
+
+// Declare the gradesArray globally so it can be accessed anywhere in your script
+const gradesArray = [];
+
 document.getElementById("save-btn").addEventListener("click", function () {
   const customgradesdata = document.querySelectorAll(".grade-entry");
-  console.log(customgradesdata);
+
+  // Clear the array before repopulating it to avoid duplicates
+  gradesArray.length = 0;
+
+  customgradesdata.forEach((gradeEntry) => {
+    // Extract values from the input fields within the current grade entry
+    const grade = gradeEntry.querySelector(".grade-input").value.trim();
+    const minScore = parseFloat(gradeEntry.querySelector(".min-score").value);
+    const maxScore = parseFloat(gradeEntry.querySelector(".max-score").value);
+    const gradeGP = parseFloat(gradeEntry.querySelector(".grade-gp").value);
+
+    // Create an object for the current grade entry
+    const gradeObject = { grade, minScore, maxScore, gradeGP };
+
+    // Add the object to the array
+    gradesArray.push(gradeObject);
+  });
 });
